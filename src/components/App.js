@@ -41,7 +41,7 @@ export default class App extends React.Component{
         <div className="container-fluid">
           <nav>
             <div className="nav-wrapper">
-              <a href="/" className="brand-logo">Ava Challenge</a>
+              <a href="/" className="brand-logo">Ava Open Challenge</a>
             </div>
           </nav>
           <ConversationList conversations={this.state.conversations} updateState={this.updateState} updateConversation={this.updateConversation}/>
