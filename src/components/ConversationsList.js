@@ -1,51 +1,53 @@
-import React from "react"
-import { connect } from "react-redux"
-import { fetchRestaurants } from "../redux/actions/restaurantsActions"
-import RestaurantListItem from "../components/Restaurant"
-import "../App.css"
+import React from 'react';
+import axios from 'axios';
+import {useHistory} from 'react-router-dom';
+import {BASE_URL} from '../index';
 
-class ConversationsList extends Component {
+export default function ConversationList(props){
+  let history = useHistory();
 
+  function handleClick(conversation){
+    let id = conversation._id;
+    let url = `/conversation/${id}`
+    // let url = BASE_URL + `/conversation/${id}`
+    history.push(`/conversation/${id}`);
+    axios.get(url)
+      .then((response) => {
+        console.log('Response: ' + response);
+        props.updateConversation(response.data);
+      })
+      .catch((error) => {
+        console.log('Error: ' + error)
+      });
+  };
 
-  componentDidMount() {
-    this.props.fetchConversations()
-  }
+  function handleDelete(conversation){
+    let url = '/conversations';
+    // let url = BASE_URL + '/conversations';
+    axios.delete(url, {data: {id: conversation._id}})
+      .then((response) => {
+        console.log('Response: ' + response)
+        props.updateState();
+      })
+      .catch((error) => {
+        console.log('Error: ' + error)
+      });
+  };
 
-
-  render() {
-    this.props.conversations.sort(function(a, b) {
-      if (a.likes > b.likes) {
-        return -1;
-      }
-      if (a.likes < b.likes) {
-        return 1;
-      }
-      return 0;
-    });
-
-    if (this.props.conversations.length === 0) {
-      return <h1>Loading...</h1>
-    }
-
-    return (
-      <div className="list-style">
-        <ul className="list-style-list">
-          {this.props.conversationss.map(restaurant => (
-            <ConversationListItem
-              key={conversation.id}
-              conversation={conversation}
-            />
+    return(
+      <div>
+        <h4>Conversations</h4>
+        <ul className="collection">
+          {props.conversations.map((conversation) => (
+            <li className="collection-item" key={conversation._id} onClick={handleClick.bind(this, conversation)}>
+              <div>{conversation.text}
+                <a onClick={handleDelete.bind(this, conversation)} className="secondary-content">
+                  <i className="material-icons">delete</i>
+                </a>
+              </div>
+            </li>
           ))}
         </ul>
       </div>
     )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    restaurants: state.conversations.conversations
-  }
-}
-
-export default connect( mapStateToProps, { fetchCovns } )(RestaurantsContainer)
+};
