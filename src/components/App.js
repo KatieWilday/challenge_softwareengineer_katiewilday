@@ -17,7 +17,6 @@ export default class App extends React.Component{
   };
   updateState = () => {
     axios.get('/conversations')
-    // axios.get(BASE_URL + '/conversations')
       .then((res) => {
         this.setState({conversations: res.data});
         console.log(res);
@@ -39,10 +38,10 @@ export default class App extends React.Component{
   render(){
     return(
       <BrowserRouter>
-        <div className="container-fluid">
+        <div className="App">
           <nav>
             <div className="nav-wrapper">
-              <a href="/" className="brand-logo">Ava Hiring Challenge</a>
+              <a href="/">Home</a>
             </div>
           </nav>
           <ConversationList conversations={this.state.conversations} updateState={this.updateState} updateConversation={this.updateConversation}/>

@@ -36,7 +36,7 @@ export default function ConversationList(props){
 
     return(
       <div>
-        <h4>Conversations</h4>
+        <h4>Conversations:</h4>
         <ul className="collection">
           {props.conversations.map((conversation) => (
             <li className="collection-item" key={conversation._id} onClick={handleClick.bind(this, conversation)}>
