@@ -1,5 +1,3 @@
-const controllers = require('./controllers');
-const operationalTransformation = require('./operationalTransformation');
 
 const routes = (app) => {
   app.route('/ping')
