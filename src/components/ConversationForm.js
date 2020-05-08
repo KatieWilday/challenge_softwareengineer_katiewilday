@@ -29,7 +29,7 @@ export default class ConversationForm extends React.Component{
     console.log(originalText, newText);
     //const url = BASE_URL + '/mutations'
     const form = {
-      conversationId: this.props.conversation._id, // "index": 15,
+      conversationId: this.props.conversation.id, // "index": 15,
       text: event.target.conversationText.value,
       author: this.state.author
     }

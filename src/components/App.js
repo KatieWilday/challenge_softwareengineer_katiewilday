@@ -9,6 +9,7 @@ import {
 import { BASE_URL } from '../index';
 import ConversationForm from './ConversationForm';
 import ConversationList from './ConversationList';
+import Home from './Home';
 
 export default class App extends React.Component{
   state = {
@@ -57,6 +58,7 @@ export default class App extends React.Component{
             </ul>
             </div>
           </nav>
+          <Route exact path ='/home' component={Home} />
           <ConversationList conversations={this.state.conversations} updateState={this.updateState} updateConversation={this.updateConversation}/>
           <Switch>
             <Route path='/conversation/:id'>
