@@ -1,3 +1,4 @@
+const endpoints = require('./endpoints');
 
 const routes = (app) => {
   app.route('/ping')
@@ -11,6 +12,8 @@ const routes = (app) => {
     .delete(controllers.deleteConversation);
   app.route('/conversation/:conversationId')
     .get(controllers.getConversation);
+  app.route('/origin')
+    .get(operationalTransformation.getOrigin);
 };
 
 module.exports = routes

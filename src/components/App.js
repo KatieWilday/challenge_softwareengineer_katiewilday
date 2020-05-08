@@ -47,7 +47,8 @@ export default class App extends React.Component{
             <div className="nav-wrapper">
             <ul>
               <li><a href="/">Home</a></li>{" "}
-              <li><a href="/conversation/id">New Conversation</a></li>
+              <li><a href="/conversation/id">New Conversation</a></li
+              <li><a href="/conversations">Conversations List</a></li>
             </ul>
             </div>
           </nav>
