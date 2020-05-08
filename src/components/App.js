@@ -15,6 +15,7 @@ export default class App extends React.Component{
     conversations: [],
     conversation: {}
   };
+
   updateState = () => {
     //axios.get('/conversations')
     axios.get(BASE_URL + '/conversations')
@@ -26,16 +27,20 @@ export default class App extends React.Component{
         console.log(error);
       });
   };
+
   updateConversation = (conversation) => {
     this.setState({conversation: conversation});
   };
+
   handleTextChange = (value) => {
     this.setState({conversation: {text: value}});
     console.log(this.state.conversation.text);
   };
+
   componentDidMount(){
     this.updateState();
   };
+
   render(){
     return(
       <BrowserRouter>
@@ -46,8 +51,8 @@ export default class App extends React.Component{
           <nav>
             <div className="nav-wrapper">
             <ul>
-              <li><a href="/">Home</a></li>{" "}
-              <li><a href="/conversation/id">New Conversation</a></li
+              <li><a href="/home">Home</a></li>{" "}
+              <li><a href="/conversation/id">New Conversation</a></li>
               <li><a href="/conversations">Conversations List</a></li>
             </ul>
             </div>

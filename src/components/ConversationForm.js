@@ -45,12 +45,12 @@ export default class ConversationForm extends React.Component{
     return(
     <div>
       <div className="row-text">
-        <h4>Enter Text:</h4>
         <form onSubmit={this.handleOnSubmit}>
           <div className="select">
             <Select options={options} onChange={this.handleChangeInput}/>
           </div>
           <div className="row">
+            <h4>Enter Text:</h4>
             <div className="input-field">
               <textarea onChange={this.handleChangeText} id="conversationText" className="textarea" value={text} type="text"></textarea>
             </div>
