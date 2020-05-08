@@ -59,7 +59,7 @@ export default class ConversationForm extends React.Component{
           </div>
           <div className="row">
             <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i className="material-icons right">send</i>
+              <i className="material-icons right">Send</i>
             </button>
           </div>
         </form>
