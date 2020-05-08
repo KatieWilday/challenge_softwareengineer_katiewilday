@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const models = require('./models');
-const operationalTransformation = require('./operationalTransformation');
-
+/*
 const Mutation = mongoose.model('Mutation', models.mutationSchema);
 const Conversation = mongoose.model('Conversation', models.conversationSchema);
+*/
 
 const ping = (req, res) => {
   res.status(200).send({
@@ -24,9 +23,9 @@ const getInfo = (req, res) => {
       'language': 'node.js',
       'sources': 'https://github.com/KatieWilday/challenge_softwareengineer_katiewilday',
       'answers': {
-        '1': "My approach started with drawing out how I believed the algorithm should work and breaking it down into cases based on the examples. I used that to design and implement the database schema which I chose to do in MongoDB because it is flexible and easy to change the schema if needed, and because I'm familiar with it and I was on a time crunch. I decided to tackle the insert case first and started with implementing the backend because I'm applying for the Full-Stack/Backend Engineer role and backend interests me more. I used Node.js because it is my preferred runtime environment and JavaScript is my preferred language. Once I believed that I had the insert case working, I started working on the frontend so that I would have at least a basic frontend working within the timebox. I used React.js to build a master-detail interface because I thought that it best suited the relationship between conversations and mutations. I then tested the frontend and the backend where I discovered some bugs. Unfortunately I ran out of time while debugging, so I firmed up my existing code so that it would work and then created some work-in-progress files where I could continue coding and making improvements.",
-        '2': 'If I had more time, I would add support for the delete and insert with conflict cases. I would learn about serverless frameworks and implement one, because I think that my solution has scalability concerns. I would add security, probably with JSON Web Tokens and bcrypt, so that only authorized users could access the endpoints. I would edit the code renaming variables and functions to improve clarity, and I would reorganize my project to make it more modular.',
-        '3': "I found this challenge to be an incredibly interesting puzzle, and I enjoyed working on it. I just wish that I had more time to finish. So if I were to add something to this challenge, it would be more time to work on it."
+        '1': ,
+        '2': ,
+        '3':
       }
     });
 };
