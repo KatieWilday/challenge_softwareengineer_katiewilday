@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './App.css';
 import {
   BrowserRouter,
   Switch,
@@ -41,7 +42,7 @@ export default class App extends React.Component{
         <div className="container-fluid">
           <nav>
             <div className="nav-wrapper">
-              <a href="/" className="brand-logo">Ava Open Challenge</a>
+              <a href="/" className="brand-logo">Ava Hiring Challenge</a>
             </div>
           </nav>
           <ConversationList conversations={this.state.conversations} updateState={this.updateState} updateConversation={this.updateConversation}/>

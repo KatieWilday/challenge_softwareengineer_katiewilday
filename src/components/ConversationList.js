@@ -42,7 +42,7 @@ export default function ConversationList(props){
             <li className="collection-item" key={conversation._id} onClick={handleClick.bind(this, conversation)}>
               <div>{conversation.text}
                 <a onClick={handleDelete.bind(this, conversation)} className="secondary-content">
-                  <i className="material-icons">delete</i>
+                  <i className="material-icons">Delete</i>
                 </a>
               </div>
             </li>

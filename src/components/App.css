@@ -1,12 +1,19 @@
-.App {
+.row {
   text-align: center;
+  background-color: red;
+  font: sans-serif;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-wrapper {
+  text-align: center;
+  font: sans-serif;
 }
 
+.brand-logo {
+  font: arial;
+  font-size: 36px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
