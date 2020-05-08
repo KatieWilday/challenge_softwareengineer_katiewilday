@@ -1,7 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import Select from 'react-select';
-import {BASE_URL} from '../index';
+//import {BASE_URL} from '../index';
 
 export default class ConversationForm extends React.Component{
   constructor(props){
@@ -28,7 +27,7 @@ export default class ConversationForm extends React.Component{
     var originalText = this.state.conversation;
     var newText = event.target.conversationText.value;
     console.log(originalText, newText);
-    const url = '/mutations' // const url = BASE_URL + '/mutations';
+    //const url = BASE_URL + '/mutations'
     const form = {
       conversationId: this.props.conversation._id, // "index": 15,
       text: event.target.conversationText.value,
@@ -45,22 +44,19 @@ export default class ConversationForm extends React.Component{
     ];
     return(
     <div>
-      <div className="row">
-        <h4>Mutation</h4>
-        <form className="col s6" onSubmit={this.handleOnSubmit}>
+      <div className="row-text">
+        <h4>Enter Text:</h4>
+        <form onSubmit={this.handleOnSubmit}>
           <div className="row">
-            <div className="input-field col s6">
-              <i className="material-icons prefix">mode_edit</i>
-              <textarea onChange={this.handleChangeText} id="conversationText" className="materialize-textarea" value={text} type="text"></textarea>
+            <div className="input-field">
+              <textarea onChange={this.handleChangeText} id="conversationText" className="textarea" value={text} type="text"></textarea>
             </div>
-            <div className="input-field col s6">
+            <div className="select">
               <Select options={options} onChange={this.handleChangeInput}/>
             </div>
           </div>
           <div className="row">
-            <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i className="material-icons right">Send</i>
-            </button>
+            <button className="btn-effect" type="submit" name="action">Send</button>
           </div>
         </form>
       </div>

@@ -16,7 +16,8 @@ export default class App extends React.Component{
     conversation: {}
   };
   updateState = () => {
-    axios.get('/conversations')
+    //axios.get('/conversations')
+    axios.get(BASE_URL + '/conversations')
       .then((res) => {
         this.setState({conversations: res.data});
         console.log(res);
@@ -39,9 +40,15 @@ export default class App extends React.Component{
     return(
       <BrowserRouter>
         <div className="App">
+          <div className="App-title">
+            <h1>Ava Collaborative Editing System</h1>
+          </div>
           <nav>
             <div className="nav-wrapper">
-              <a href="/">Home</a>
+            <ul>
+              <li><a href="/">Home</a></li>{" "}
+              <li><a href="/conversation/id">New Conversation</a></li>
+            </ul>
             </div>
           </nav>
           <ConversationList conversations={this.state.conversations} updateState={this.updateState} updateConversation={this.updateConversation}/>

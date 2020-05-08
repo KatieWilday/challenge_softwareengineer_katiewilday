@@ -8,8 +8,8 @@ export default function ConversationList(props){
 
   function handleClick(conversation){
     let id = conversation._id;
-    let url = `/conversation/${id}`
-    // let url = BASE_URL + `/conversation/${id}`
+    //let url = `/conversation/${id}`
+    let url = BASE_URL + `/conversation/${id}`
     history.push(`/conversation/${id}`);
     axios.get(url)
       .then((response) => {
@@ -22,8 +22,8 @@ export default function ConversationList(props){
   };
 
   function handleDelete(conversation){
-    let url = '/conversations';
-    // let url = BASE_URL + '/conversations';
+    //let url = '/conversations';
+    let url = BASE_URL + '/conversations';
     axios.delete(url, {data: {id: conversation._id}})
       .then((response) => {
         console.log('Response: ' + response)
@@ -36,14 +36,13 @@ export default function ConversationList(props){
 
     return(
       <div>
-        <h4>Conversations:</h4>
         <ul className="collection">
           {props.conversations.map((conversation) => (
             <li className="collection-item" key={conversation._id} onClick={handleClick.bind(this, conversation)}>
               <div>{conversation.text}
-                <a onClick={handleDelete.bind(this, conversation)} className="secondary-content">
+                <div onClick={handleDelete.bind(this, conversation)} className="secondary-content">
                   <i className="material-icons">Delete</i>
-                </a>
+                </div>
               </div>
             </li>
           ))}
