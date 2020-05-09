@@ -18,14 +18,14 @@ const getInfo = (req, res) => {
         'name': 'Katie Wilday'
       },
       'frontend': {
-        'url': ''
+        'url': 'http://localhost:3000'
       },
       'language': 'node.js',
       'sources': 'https://github.com/KatieWilday/challenge_softwareengineer_katiewilday',
       'answers': {
-        '1': ,
-        '2': ,
-        '3':
+        '1': "The way I approached the problem was with the frontend aspect first since I am applying for the Full-stack/Frontend Engineer role. I used React.js to build out the interface and JavaScript as it is my preferred language. I first created different components to display the form for user as well as one for displaying all the conversations. When building the application, I used the componentDidMount lifecycle method to fetch data from a server and to update the state of the conversation object.After typing in a new message, the application logs in the JavaScript console each character added and/or subtracted as well as the array of author and text. A problem that I ran into was that I was getting a NPM error in my terminal and I didn’t know where it was coming from. I ended up googling the error and finding out that it was actually a JSON issue. From there I was able to identify the missing of a comma in my package.json file. To make the application more visually appealing I chose to add CSS into an App.css file to apply to the different “classNames” throughout my code.",
+        '2': "If I had more time I would have looked into creating more of the backend and connect it to a database. I would have gone back through my code and refactored some and renamed some variables to make it more clear and readable.",
+        '3': "This challenge was really enjoyable for me as it gave me the opportunity to learn. Throughout this challenge I did do a lot of research and studying where I was able to pick up new skills and debugging ideas. If I were to add something to this challenge I would add little more time to work on it and perfect things."
       }
     });
 };
